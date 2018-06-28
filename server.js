@@ -7,7 +7,7 @@ const app = express();
 app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
-    
+
     res.setHeader('Access-Control-Allow-Origin', '*');
 
     // Request methods you wish to allow
@@ -27,7 +27,7 @@ app.use(function (req, res, next) {
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false })); 
-app.use(express.static(path.join(__dirname, 'dist/'))); // Point static path to dist
+app.use(express.static(path.join(__dirname, '/'))); // Point static path to dist
  
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
